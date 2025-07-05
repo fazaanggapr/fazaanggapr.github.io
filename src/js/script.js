@@ -1,10 +1,9 @@
-// Navbar Fixed
-window.onscroll = function() {
+// Navbar Fixed & Back to Top Button
+window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    const fixedNav = header.offsetTop;
     const toTop = document.querySelector('#to-top');
 
-    if (window.pageYOffset > fixedNav) {
+    if (window.scrollY > header.offsetTop) {
         header.classList.add('navbar-fixed');
         toTop.classList.remove('hidden');
         toTop.classList.add('flex');
@@ -13,21 +12,23 @@ window.onscroll = function() {
         toTop.classList.remove('flex');
         toTop.classList.add('hidden');
     }
-}
+});
 
 // Hamburger Menu Toggle Script
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
 
-hamburger.addEventListener('click', function() {
+hamburger.addEventListener('click', function(e) {
+    e.stopPropagation(); // Mencegah event bubbling
     hamburger.classList.toggle('hamburger-active');
     navMenu.classList.toggle('hidden');
 });
 
-// Klik di luar hamburger
+// Klik di luar hamburger untuk menutup menu
 window.addEventListener('click', function(e) {
-    if (e.target != hamburger && e.target != navMenu) {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
         hamburger.classList.remove('hamburger-active');
         navMenu.classList.add('hidden');
     }
 });
+
