@@ -1,25 +1,19 @@
 // Navbar Fixed & Back to Top Button
-window.addEventListener('scroll', () => {
+window.onscroll = function() {
     const header = document.querySelector('header');
-    const toTop = document.querySelector('#to-top');
+    const fixedNav = header.offsetTop;
 
-    if (window.scrollY > header.offsetTop) {
+    if (window.pageYOffset > fixedNav) {
         header.classList.add('navbar-fixed');
-        toTop.classList.remove('hidden');
-        toTop.classList.add('flex');
     } else {
         header.classList.remove('navbar-fixed');
-        toTop.classList.remove('flex');
-        toTop.classList.add('hidden');
     }
-});
-
+}
 // Hamburger Menu Toggle Script
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
 
-hamburger.addEventListener('click', function(e) {
-    e.stopPropagation(); // Mencegah event bubbling
+hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('hamburger-active');
     navMenu.classList.toggle('hidden');
 });
@@ -32,3 +26,22 @@ window.addEventListener('click', function(e) {
     }
 });
 
+const darkToggle = document.querySelector('#dark-toggle');
+const html = document.querySelector('html');
+
+darkToggle.addEventListener('click', function() {
+   if (darkToggle.checked) {
+         html.classList.add('dark');
+         localStorage = 'dark';
+   } else {
+            html.classList.remove('dark');
+            localStorage = 'light';
+   }
+});
+
+// pindahkan posisi toggle sesuai mode
+if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    darkToggle.checked = false;
+} else {
+    darkToggle.checked = true;
+}
