@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['index.html'],
+  content: [
+    'index.html',
+    'components/*.html',
+    '*.html',  // Untuk semua file HTML di root
+    './src/**/*.{html,js}' // Jika ada file lain di folder src
+  ],
   darkMode: 'class',
   theme: {
     container: {
@@ -13,11 +18,7 @@ module.exports = {
         secondary: '#64748b',
         dark: '#0f172a',
       },
-      screens: {
-        '2xl': '1320px',
-      },
     },
   },
   plugins: [],
 }
-

@@ -1,810 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Welcome to my personal portfolio website."
-    />
-    <meta
-      name="keywords"
-      content="Portfolio, Faza Angga Pramuditio, Frontend Developer, Web Designer, Web Development"
-    />
-    <meta
-      property="og:title"
-      content="My Portfolio Website — Faza Angga Pramuditio"
-    />
-    <meta name="author" content="Faza Angga Pramuditio" />
-    <link
-      rel="icon"
-      href="https://fazaanggapra.my.id/src/img/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      property="og:image"
-      content=""
-    />
-    <meta property="og:url" content="https://fazaanggapra.my.id/" />
-    <title>Faza Angga – Portfolio Website</title>
-    <link href="src/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const typedElement = document.querySelector(".typed");
-    if (typedElement) {
-      const items = typedElement.getAttribute("data-typed-items").split(",");
-      new Typed(".typed", {
-        strings: items,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 1500,
-        loop: true,
-      });
-    }
-  });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website of Faza Angga Pramuditio - Frontend Developer, Web Designer, and Web Developer" />
+  <meta name="keywords" content="Portfolio, Faza Angga Pramuditio, Frontend Developer, Web Designer, Web Development, HTML, CSS, JavaScript" />
+  <meta name="author" content="Faza Angga Pramuditio" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Faza Angga — Portfolio Website" />
+  <meta property="og:description" content="Frontend Developer & Web Designer focused on creating modern, responsive websites" />
+  <meta property="og:image" content="https://fazaanggapra.my.id/src/img/og-image.jpg" />
+  <meta property="og:url" content="https://fazaanggapra.my.id/" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="src/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="src/img/apple-touch-icon.png" />
+  
+  <!-- Title -->
+  <title>Faza Angga — Portfolio Website</title>
+  
+  <!-- Stylesheets -->
+  <link href="src/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="src/components/header.html" as="fetch" crossorigin="anonymous">
+  <link rel="preload" href="src/components/herosection.html" as="fetch" crossorigin="anonymous">
+</head>
 
-   document.documentElement.classList.toggle(
-  'light',
-  localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-)
-    </script>
-  </head>
-  <body class="dark:bg-dark">
-    <!-- Header Start -->
-    <header class="bg-transparent fixed top-0 left-0 w-full flex items-center z-10">
-      <div class="container">
-        <div class="flex items-center justify-between relative">
-          <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6"
-              >fazaanggapr.</a
-            >
-          </div>
-          <div class="flex items-center px-4">
-            <button
-              id="hamburger"
-              name="hamburger"
-              type="button"
-              class="block absolute right-4 lg:hidden"
-            >
-              <span
-                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
-              ></span>
-              <span
-                class="hamburger-line transition duration-300 ease-in-out"
-              ></span>
-              <span
-                class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
-              ></span>
-            </button>
-
-            <nav
-              id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-sm w-full right-4 top-full lg:block lg:bg-transparent lg:max-w-full lg:w-auto lg:static lg:rounded-none lg:shadow-none dark:bg-dark dark:shadow-slate-800 lg:dark:bg-transparent"
-            >
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a
-                    href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                    >Home</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#about"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                    >About</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                  href="#skills"
-                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                  >Skills</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#portfolio"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                    >Portfolio</a
-                    >
-                  </li>
-                 <!--  <li class="group">
-                    <a
-                      href="#service"
-                      class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                      >Service</a
-                    >
-                  </li>
-                  -->             
-                <li class="group">
-                  <a
-                    href="#contact"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                    >Contact</a
-                  >
-                </li>
-                <li class="flex items-center pl-8 mt-3 lg:mt-0">
-                <div class="flex">
-                  <span class="mr-2 text-sm text-slate-500">Light</span>
-                  <input type="checkbox" class="hidden" id="dark-toggle" />
-                  <label for="dark-toggle">
-                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transitiond duration-300 ease-in-out"></div>
-                    </div>
-                  </label>
-                  <span class="ml-2 text-sm text-slate-500">Dark</span>
-                </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Header End -->
-
-<!-- Hero Section Start -->
-<section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('your-image.jpg');">
-  <div class="text-center px-4">
-    <h1 class="text-dark dark:text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-      Faza Angga Pramuditio
-    </h1>
-    <h2 class="text-dark dark:text-white text-2xl sm:text-3xl md:text-4xl font-medium mb-6">
-      I'm <span class="text-primary typed" data-typed-items="Frontend Developer, Web Designer, Web Developer"></span>
-    </h2>
-    <p class="text-dark dark:text-white text-base sm:text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-      Focused on creating modern, responsive, and user-friendly websites.
-    </p>
-    <!-- Sosial Media -->
-    <div class="flex justify-center gap-4">
-      <!-- GitHub -->
-      <a href="https://github.com/fazaanggapr" target="_blank"
-         class="w-10 h-10 rounded-full border border-dark text-dark dark:border-white dark:text-white flex items-center justify-center hover:bg-primary hover:text-black transition">
-        <!-- SVG GitHub -->
-        <svg
-       role="img"
-       width="20"
-       class="fill-current"
-       viewBox="0 0 24 24"
-       xmlns="http://www.w3.org/2000/svg"
-        >
-       <title>GitHub</title>
-       <path
-       d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/> </svg
-      </a>
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/fazaanggapr" target="_blank"
-         class="w-10 h-10 rounded-full border border-dark text-dark dark:border-white dark:text-white flex items-center justify-center hover:bg-primary hover:text-black transition">
-        <!-- SVG LinkedIn -->
-        <svg
-                  role="img"
-                  width="20"
-                  class="fill-current"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>LinkedIn</title>
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.851-3.037-1.851 0-2.135 1.445-2.135 2.939v5.667h-3.554v-11.5h3.414v1.571h.049c.476-.9 1.637-1.851 3.367-1.851 3.598 0 4.264 2.368 4.264 5.452v6.328zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019h-3.554v-11.5h3.554v11.5zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
-                  />
-                </svg>
-      </a>
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/fazaanggapr" target="_blank"
-         class="w-10 h-10 rounded-full border border-dark text-dark dark:border-white dark:text-white flex items-center justify-center hover:bg-primary hover:text-black transition">
-        <!-- SVG Instagram -->
-        <svg
-                  role="img"
-                  width="20"
-                  class="fill-current"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Instagram</title>
-                  <path
-                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
-                  /></svg>
-      </a>
-    </div>
+<body class="dark:bg-dark">
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="fixed inset-0 bg-white dark:bg-dark z-50 flex items-center justify-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
   </div>
-</section>
-<!-- Hero Section End -->
 
-    <!-- About Section Start -->
-    <section id="about" class="pt-20 dark:bg-dark" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-      <div class="container">
-        <div class="flex flex-wrap">
-        <div class="w-full px-4">
-      <div class="max-w-xl mx-auto text-center mb-16">
-        <h4 class="font-bold uppercase text-primary text-lg mb-3"> About </h4>
-        <h2 class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">
-          My Journey
-        </h2>
-        <p class="font-medium text-md text-secondary md:text-lg">
-        This section tells the story of my journey — who I am, where I studied, and what I’ve experienced so far. 
-        </p>
-      </div>
-    </div>
-         <!-- Image Section -->
-         <div class="w-full lg:w-1/2 px-4 mb-10 lg:mb-0">
-          <div class="relative mx-auto max-w-md">
-          <!-- Red Circle -->
-          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-125 z-0">
-            <svg width="350" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#dc2626"
-                d="M52.7,-14.7C61.2,9,56.1,39.6,35.8,55.9C15.5,72.2,-19.9,74.2,-40,58.7C-60.1,43.3,-64.8,10.3,-55.6,-14.4C-46.3,-39.1,-23.2,-55.5,-0.5,-55.4C22.1,-55.2,44.2,-38.4,52.7,-14.7Z"
-                transform="translate(100 100) scale(1.2)" />
-            </svg>
-          </span>
+  <!-- Header -->
+  <div id="header-container" class="opacity-0 transition-opacity duration-500"></div>
 
-          <!-- Foto -->
-          <img src="src/img/fazaanggapr-taruna-removebg-preview (2).png"
-            alt="Faza Angga"
-            class="relative z-10 mx-auto max-w-full"
-            width="400" height="400"
-          />
-        </div>
-      </div>
-
-      <!-- About Text Section -->
-      <div class="w-full lg:w-1/2 px-4">
-        <h2 class="font-bold text-dark text-3xl lg:text-4xl mb-5 max-w-md dark:text-white">
-          Profile
-        </h2>
-        <p class="font-medium text-base text-secondary lg:text-lg mb-6 max-w-xl">
-          I am a student who has a strong interest in software engineering.
-          During my schooling, I concentrate on my major. I continue to
-          learn to improve my skills in website development.
-        </p>
-<div class="flex flex-wrap">
-  <div class="w-full md:w-1/2 dark:text-white">
-    <ul class="mb-4 space-y-2">
-      <li><i class="bi bi-chevron-right text-primary mr-1"></i> <strong>Email:</strong> fazaanggapr@gmail.com </li>
-      <li><i class="bi bi-chevron-right text-primary mr-1"></i> <strong>Phone:</strong> +62 838-7498-8972 </li>
-      <li><i class="bi bi-chevron-right text-primary mr-1"></i> <strong>City:</strong> Bogor, West Java, Indonesia </li>
-    </ul>
-  </div>
-</div>
-
-
-        <!-- Resume Button -->
-        <a
-          href="/Faza_Angga_Pramuditio.pdf"
-          download="Faza_Resume.pdf"
-          class="inline-flex items-center gap-2 text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM13 9V3.5L18.5 9H13zM8 13h8v2H8v-2zm0 4h5v2H8v-2z"
-            />
-          </svg>
-          My Resume
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- About Section End -->
-
-<!-- Experience Start -->
-<section id="experience" class="pb-16 dark:bg-dark min-h-screen flex items-center justify-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-  <div class="w-full px-4 py-10 sm:px-6 md:px-10 lg:px-20">
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-      <!-- Education -->
-      <div>
-        <h4 class="text-lg font-bold uppercase text-primary mb-3">EDUCATION</h4>
-        <div class="border-l-2 border-[#bababa] pl-4">
-          <div class="relative p-5 mb-5 border border-[#eaeaea] bg-white dark:bg-dark transition-all hover:shadow-md hover:border-transparent cursor-pointer rounded-lg">
-         <div class="absolute w-4 h-4 bg-red-600 border-2 border-white rounded-full -left-6 md:-left-6 top-0"></div>
-            <h4 class="text-primary font-medium">July 2023 - Present</h4>
-            <h3 class="text-dark dark:text-white py-2 font-bold">SMK Plus Pelita Nusantara</h3>
-            <p class="font-medium text-base text-secondary lg:text-lg">
-              Major: Software Engineering
-            </p>
-            <p class="font-medium text-base text-secondary lg:text-lg">
-              Focusing on web development, programming languages, and software design.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience -->
-      <div>
-        <h4 class="text-lg font-bold uppercase text-primary mb-3">EXPERIENCE</h4>
-        <div class="border-l-2 border-[#bababa] pl-4">
-          <div class="relative p-5 mb-5 border border-[#eaeaea] bg-white dark:bg-dark transition-all hover:shadow-md hover:border-transparent cursor-pointer rounded-lg">
-<div class="absolute w-4 h-4 bg-red-600 border-2 border-white rounded-full -left-6 md:-left-6 top-0"></div>
-            <h4 class="text-primary font-medium">February - August 2025</h4>
-            <h3 class="text-dark dark:text-white py-2 font-bold">PT Digital Forte Indonesia</h3>
-            <p class="font-medium text-base text-secondary lg:text-lg">
-              Frontend Developer Intern
-            </p>
-            <p class="font-medium text-base text-secondary lg:text-lg">
-              Responsibilities: Developing a daycare management application and built a security web application.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-<!-- Experience End -->
-
-    <!-- Skills Section Start -->
-    <section id="skills" class="pt-20 pb-36 dark:bg-dark" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">Skills</h4>
-            <h2
-            class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
-            >
-              Tech Stack
-            </h2>
-            <p class="font-medium text-md text-secondary md:text-lg">
-              Tools and technologies I work with.
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-white">
-          <!-- Reusable Tech Stack Cards -->
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/html-5.png" alt="HTML" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">HTML</p>
-              <p class="text-xs text-secondary">Markup Language</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/css-3.png" alt="CSS" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">CSS</p>
-              <p class="text-xs text-secondary">Style Sheet</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/js.png" alt="JavaScript" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">JavaScript</p>
-              <p class="text-xs text-secondary">Programming Language</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/php.png" alt="PHP" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">PHP</p>
-              <p class="text-xs text-secondary">Backend Language</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/laravel-svgrepo-com.svg" alt="Laravel" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">Laravel</p>
-              <p class="text-xs text-secondary">PHP Framework</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/reactjs-svgrepo-com.svg" alt="React.js" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">React.js</p>
-              <p class="text-xs text-secondary">Frontend Framework</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/bootstrap-svgrepo-com.svg" alt="Bootstrap" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">Bootstrap</p>
-              <p class="text-xs text-secondary">CSS Framework</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/tailwindcss-icon-svgrepo-com.svg" alt="Tailwind CSS" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">Tailwind CSS</p>
-              <p class="text-xs text-secondary">Utility Framework</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-lg shadow-md w-64 max-w-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <img src="src/img/figma-svgrepo-com.svg" alt="Figma" class="w-8 h-8 object-contain shrink-0" />
-            <div>
-              <p class="font-semibold text-sm text-dark dark:text-white">Figma</p>
-              <p class="text-xs text-secondary">Design Tool</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </div>
-    </section>
-    <!-- Skills Section End -->
-
-    <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-20 pb-16 bg-slate-100 dark:bg-slate-800" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-      <div class="container mx-auto px-4">
-        <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
-            <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
-              >
-              Projects
-            </h2>
-            <p class="font-medium text-md text-secondary md:text-lg">
-              Here are some of the projects I’ve worked on — from responsive
-              websites to interactive user interfaces. Each project reflects my
-              passion for clean design, efficient code, and delivering great
-              user experiences.
-            </p>
-          </div>
-        </div>
-<div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <div id="herosection-container" class="opacity-0 transition-opacity duration-500"></div>
     
-    <!-- Card 1 -->
-    <div class="bg-white dark:bg-dark rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div class="h-48 relative">
-        <img src="src/img/1.png" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/20"></div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-4 dark:text-white">MyWeeabooList App</h3>
-        <p class="text-gray-600 mb-4 h-16">
-          A simple website to track it allows users to search for search anime, rating, and synopsis.
-        </p>
-        <div class="flex flex-wrap gap-2 my-6">
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">JavaScript</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">CSS</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">React.js</span>
-        </div>
-        <div class="flex gap-4">
-          <a href="https://myweeabooanimelist-app.vercel.app/" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">Live Demo</a>
-          <a href="https://github.com/fazaanggapr/myweeabooanimelist-app" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">
-            <i class="fa-brands fa-github mr-2"></i>GitHub
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- About Section -->
+    <div id="about-container" class="opacity-0 transition-opacity duration-500"></div>
+    
+    <!-- Education & Experience Section -->
+    <div id="education-and-experience-container" class="opacity-0 transition-opacity duration-500"></div>
+    
+    <!-- Skills Section -->
+    <div id="skills-container" class="opacity-0 transition-opacity duration-500"></div>
+    
+    <!-- Portfolio Section -->
+    <div id="portfolio-container" class="opacity-0 transition-opacity duration-500"></div>
+    
+    <!-- Contact Section -->
+    <div id="contact-container" class="opacity-0 transition-opacity duration-500"></div>
+  </main>
 
-    <!-- Card 2 -->
-    <div class="bg-white dark:bg-dark rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div class="h-48 relative">
-        <img src="src/img/2.png" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/20"></div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-4 dark:text-white">Shopping List App</h3>
-        <p class="text-gray-600 mb-4 h-16">
-          A simple shopping list app that allows users to add, remove, and manage their shopping items.
-        </p>
-        <div class="flex flex-wrap gap-2 my-6">
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">JavaScript</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">CSS</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">React.js</span>
-        </div>
-        <div class="flex gap-4">
-          <a href="https://catatan-belanja-app.vercel.app/" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">Live Demo</a>
-          <a href="https://github.com/fazaanggapr/catatan-belanja-app" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">
-            <i class="fa-brands fa-github mr-2"></i>GitHub
-          </a>
-        </div>
-      </div>
-    </div>
+  <!-- Footer -->
+  <div id="footer-container" class="opacity-0 transition-opacity duration-500"></div>
 
-    <!-- Card 3 -->
-    <div class="bg-white dark:bg-dark rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div class="h-48 relative">
-        <img src="src/img/4.png" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/20"></div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-4 dark:text-white">Landing Page Coffeeshop</h3>
-        <p class="text-gray-600 mb-4 h-16">
-          A landing page for a coffee shop that showcases their products, services, and ambiance.
-        </p>
-        <div class="flex flex-wrap gap-2 my-6">
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">HTML</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">CSS</span>
-          <span class="px-3 py-1 bg-gray-100 dark:bg-slate-800 font-semibold text-gray-600 dark:text-gray-300 rounded-full text-sm">JavaScript</span>
-        </div>
-        <div class="flex gap-4">
-          <a href="https://kedai-secangkir-kopi.vercel.app/" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">Live Demo</a>
-          <a href="https://github.com/fazaanggapr/kedai-secangkir-kopi" class="px-4 py-2 bg-primary text-white hover:bg-red-700 transition-colors rounded-lg">
-            <i class="fa-brands fa-github mr-2"></i>GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-        </div>
-        </div>
-      </div>
-    </section>
-    <!-- Portfolio Section End -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="src/js/script.js"></script>
 
-        <!-- Service Section Start -->
- <!--    <section id="service" class="pt-20 pb-16 dark:bg-dark" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">Services</h4>
-            <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
-            >
-              What I Do
-            </h2>
-            <p class="font-medium text-md text-secondary md:text-lg">
-              I provide end-to-end services in web design, web development, and
-              UI/UX design.
-            </p>
-          </div>
-        </div>
+  <script>
+    // Component Loader - Simplified version that works with external script.js
+    class ComponentLoader {
+      constructor() {
+        this.loadedComponents = 0;
+        this.totalComponents = 8; // header, hero, about, education, skills, portfolio, contact, footer
+        this.components = [
+          { id: 'header-container', path: 'src/components/header.html', critical: true },
+          { id: 'herosection-container', path: 'src/components/herosection.html', critical: true },
+          { id: 'about-container', path: 'src/components/about.html' },
+          { id: 'education-and-experience-container', path: 'src/components/education-and-experience.html' },
+          { id: 'skills-container', path: 'src/components/skills.html' },
+          { id: 'portfolio-container', path: 'src/components/portfolio.html' },
+          { id: 'contact-container', path: 'src/components/contact.html' },
+          { id: 'footer-container', path: 'src/components/footer.html' }
+        ];
+      }
 
-
-<div
-          class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto"
-        >
-         
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden bg-white dark:bg-slate-800 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <img
-                src="src/img/web-design.svg"
-                alt="Web Design"
-                class="w-16 h-16 mb-4 mx-auto"
-              />
-              <h3 class="font-semibold text-xl text-primary mb-3">
-                Web Design
-              </h3>
-              <p class="font-medium text-base text-secondary">
-              Responsive design, clean and modern website layouts to ensure your website looks all devices. 
-              </p>
-            </div>
-          </div>
-
+      async loadComponent(component) {
+        try {
+          const response = await fetch(component.path);
+          if (!response.ok) {
+            throw new Error(`Failed to load ${component.path}: ${response.status}`);
+          }
           
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden bg-white dark:bg-slate-800 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <img
-                src="src/img/web-development-svgrepo-com.svg"
-                alt="Web Development"
-                class="w-16 h-16 mb-4 mx-auto"
-              />
-              <h3 class="font-semibold text-xl text-primary mb-3">
-                Web Development
-              </h3>
-              <p class="font-medium text-base text-secondary">
-                Developing dynamic websites with clean code and strong
-                functionality to meet your business needs.
-              </p>
-            </div>
-          </div>
-
+          const data = await response.text();
+          const container = document.getElementById(component.id);
           
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden bg-white dark:bg-slate-800 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <img
-                src="https://www.svgrepo.com/show/159917/ux-design.svg"
-                alt="UI/UX Design"
-                class="w-16 h-16 mb-4 mx-auto"
-              />
-              <h3 class="font-semibold text-xl text-primary mb-3">
-                UI/UX Design
-              </h3>
-              <p class="font-medium text-base text-secondary">
-                Designing user interfaces that are intuitive, engaging, and
-                focused on delivering the best user experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Service Section End -->
+          if (container) {
+            container.innerHTML = data;
+            
+            // Add fade-in effect
+            setTimeout(() => {
+              container.classList.remove('opacity-0');
+              container.classList.add('opacity-100');
+            }, 100);
+            
+            this.onComponentLoaded(component);
+          }
+        } catch (error) {
+          console.error(`Error loading component ${component.id}:`, error);
+          this.onComponentLoaded(component, true);
+        }
+      }
 
-<!-- Contact Section Start -->
-<section id="contact" class="pt-20 pb-16 dark:bg-slate-800" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-  <div class="container">
-    <div class="w-full px-4">
-      <div class="max-w-xl mx-auto text-center mb-16">
-        <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-        <h2 class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">
-          Contact Me
-        </h2>
-        <p class="font-medium text-md text-secondary md:text-lg">
-          Got a question or just want to say hi? Fill out the form below
-          with your name, email, and message.
-        </p>
-      </div>
-    </div>
+      onComponentLoaded(component, hasError = false) {
+        this.loadedComponents++;
+        
+        if (!hasError) {
+          console.log(`✓ Loaded: ${component.id}`);
+        }
 
-    <!-- FORM START -->
-    <form action="https://formspree.io/f/mldljqlj" method="POST">
-      <div class="w-full lg:w-2/3 lg:mx-auto">
-        <div class="w-full px-4 mb-8">
-          <label for="name" class="text-base font-bold text-primary">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:border-primary"
-          />
-        </div>
-        <div class="w-full px-4 mb-8">
-          <label for="email" class="text-base font-bold text-primary">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:border-primary"
-          />
-        </div>
-        <div class="w-full px-4 mb-8">
-          <label for="message" class="text-base font-bold text-primary">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:border-primary h-32"
-          ></textarea>
-        </div>
-        <div class="w-full px-4">
-          <button
-            type="submit"
-            class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </form>
-    <!-- FORM END -->
-  </div>
-</section>
-<!-- Contact Section End -->
+        // Update progress
+        const progress = (this.loadedComponents / this.totalComponents) * 100;
+        console.log(`Loading progress: ${Math.round(progress)}%`);
 
+        // Hide loading spinner when all components are loaded
+        if (this.loadedComponents >= this.totalComponents) {
+          this.hideLoadingSpinner();
+        }
+      }
 
-    <!-- Footer Section Start -->
-    <footer class="bg-dark pt-10 pb-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-12 md:w-1/3">
-            <h3 class="font-semibold text-xl text-white mb-5">About</h3>
-            <p class="text-slate-100">I am a student who has a strong interest in software engineering.
-          During my schooling, I concentrate on my major. I continue to
-          learn to improve my skills in website development.</p>
-          </div>
-          <div class="w-full px-4 mb-12 md:w-1/3">
-            <h3 class="font-semibold text-xl text-white mb-5">Links</h3>
-            <ul class="text-slate-300">
-              <li>
-                <a
-                  href="home"
-                  class="inline-block text-base hover:text-primary mb-3"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about"
-                  class="inline-block text-base hover:text-primary mb-3"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio"
-                  class="inline-block text-base hover:text-primary mb-3"
-                  >Portfolio</a
-                >
-              </li>
-              <li>
-                <a
-                  href="blog"
-                  class="inline-block text-base hover:text-primary mb-3"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact"
-                  class="inline-block text-base hover:text-primary mb-3"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-<div class="w-full px-4 mb-12 md:w-1/3">
-  <h3 class="font-semibold text-xl text-white mb-5">Connect</h3>
-  <div class="flex flex-wrap items-center justify-start gap-3 mb-5">
-            <!----GitHub-->
-            <a
-              href="https://github.com/fazaanggapr"
-              target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              ><svg
-                role="img"
-                width="20"
-                class="fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>GitHub</title>
-                <path
-                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                /></svg
-            ></a>
-            <!----Instagram-->
-            <a
-              href="https://www.instagram.com/fazaanggapr"
-              target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-              ><svg
-                role="img"
-                width="20"
-                class="fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Instagram</title>
-                <path
-                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
-                /></svg
-            ></a>
-            <!----LinkedIn-->
-            <a
-              href="https://www.linkedin.com/in/fazaanggapr"
-              target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <svg
-                role="img"
-                width="20"
-                class="fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>LinkedIn</title>
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.851-3.037-1.851 0-2.135 1.445-2.135 2.939v5.667h-3.554v-11.5h3.414v1.571h.049c.476-.9 1.637-1.851 3.367-1.851 3.598 0 4.264 2.368 4.264 5.452v6.328zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019h-3.554v-11.5h3.554v11.5zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
-                />
-              </svg>
-            </a>
-          </div>
-          </div>
-        </div>
-        <div class="w-full pt-10 border-t border-slate-700">
-          <p class="font-medium text-sm text-slate-400 text-center">
-            Copyright © 2025 fazaanggapr. All Rights Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Section End -->
+      hideLoadingSpinner() {
+        const spinner = document.getElementById('loading-spinner');
+        if (spinner) {
+          spinner.style.opacity = '0';
+          setTimeout(() => {
+            spinner.style.display = 'none';
+            this.initializeAOS();
+          }, 300);
+        }
+      }
 
-    <!-- Back To Top End-->
-    <script src="src/js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-  </body>
+      initializeAOS() {
+        // Initialize AOS animations
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            delay: 100
+          });
+        }
+        
+        console.log('🎉 All components loaded successfully!');
+      }
+
+      async loadAllComponents() {
+        console.log('🚀 Starting to load components...');
+        
+        // Load critical components first
+        const criticalComponents = this.components.filter(c => c.critical);
+        const nonCriticalComponents = this.components.filter(c => !c.critical);
+        
+        // Load critical components immediately
+        await Promise.all(criticalComponents.map(component => this.loadComponent(component)));
+        
+        // Load non-critical components with slight delay
+        setTimeout(() => {
+          nonCriticalComponents.forEach(component => this.loadComponent(component));
+        }, 100);
+      }
+    }
+
+    // Initialize component loader when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const loader = new ComponentLoader();
+      loader.loadAllComponents();
+    });
+  </script>
+</body>
 </html>
